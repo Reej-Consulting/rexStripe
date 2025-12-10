@@ -1,0 +1,43 @@
+<!--
+  @description       : 
+  @author            : REEJ_AJ
+  @group             : 
+  @last modified on  : 03-12-2025
+  @last modified by  : REEJ_AJ
+-->
+<template>
+  <div class="slds-box slds-p-around_large">
+    <div class="slds-box slds-m-top_medium">
+      <h2 class="slds-text-heading_medium slds-m-bottom_small">Amount</h2>
+      <div class="slds-text-color_success slds-text-heading_large">{amount} EUR</div>
+    </div>
+    <template if:true={clientSecret}>        
+      <div class="slds-box">
+        <form id="payment-form" class="payment-form">
+          <div id="card-element" class="card-element" onchange={handleCardChange}>
+          </div> 
+          <div class="slds-m-top_medium slds-text-color_error">
+            <div id="card-errors" role="alert" class="card-errors" ></div>
+          </div>   
+          <button class="submit" id="submit" onclick={handlePayment} disabled={isButtonDisabled} >Pay</button>
+        </form>
+      </div>
+    </template>
+    <div class="slds-m-top_medium slds-text-color_error">
+      <div id="payment-errors" role="alert"></div>
+    </div>
+    <template if:true={showModal}>
+      <c-payment-confirmation-modal message={message} onclosemodal={closeModal}></c-payment-confirmation-modal>
+    </template>
+    <template if:true={showLoader}>
+      <div class="slds-spinner_container">
+        <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+          <span class="slds-assistive-text">Loading</span>
+          <div class="slds-spinner__dot-a"></div>
+          <div class="slds-spinner__dot-b"></div>
+        </div>
+      </div>
+    </template>
+  </div>
+ 
+</template>

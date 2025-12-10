@@ -21,7 +21,7 @@
         <name>ApexClass</name>
     </types>
     <types>
-        <members>PaymentConfirmationModal</members>
+        <members>paymentConfirmationModal</members>
         <name>LightningComponentBundle</name>
     </types>
         <types>
@@ -29,7 +29,7 @@
         <name>LightningComponentBundle</name>
     </types>
         <types>
-        <members>StripeCardPayment</members>
+        <members>stripeCardPayment</members>
         <name>LightningComponentBundle</name>
     </types>
     <version>65.0</version>

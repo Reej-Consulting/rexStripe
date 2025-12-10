@@ -1,0 +1,123 @@
+.StripeElement {
+    background-color: lavender;
+    height: 25px;
+    padding: 5px 5px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+  }
+  
+  .StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+  }
+  
+  .StripeElement--invalid {
+    border-color: #fa755a;
+  }
+  
+  .StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+  }
+
+  /* paymentForm.css */
+.slds-box {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.slds-text-heading_large {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.button-disabled {
+  opacity: 0.5; /* Réduit l'opacité pour indiquer que le bouton est désactivé */
+  pointer-events: none; /* Empêche les clics sur le bouton désactivé */
+}
+
+.slds-text-heading_small {
+  font-size: 14px;
+  color: #777;
+}
+
+.slds-text-color_success {
+  color: #28a745;
+}
+
+.payment-form {
+  margin-top: 20px;
+}
+
+.card-element {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.submit {
+  background-color: #0070d2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+}
+
+.submit:disabled {
+  background-color: #cccccc;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor:  not-allowed;
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+}
+.submit:hover {
+  background-color: #675DFF;
+}
+.submit:hover:disabled {
+  background-color: #cccccc;
+}
+
+/* Animation de survol */
+.submit:hover {
+  transform: scale(1.05); /* Agrandir légèrement le bouton */
+}
+
+/* Animation de clic */
+.submit:active {
+  transform: scale(0.95); /* Réduire légèrement le bouton lors du clic */
+  transition: transform 0.1s ease;
+}
+
+/* Styles pour les écrans plus petits (par exemple, mobiles) */
+@media (max-width: 600px) {
+  .slds-box {
+    padding: 15px;
+  }
+  .slds-text-heading_large {
+    font-size: 20px;
+  }
+  .slds-text-heading_small {
+    font-size: 12px;
+  }
+  .submit {
+    font-size: 16px;
+  }
+}
