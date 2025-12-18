@@ -10,24 +10,25 @@ export default class StripeCardPayment extends LightningElement {
     @api result;
     
     // État interne
-    @track clientSecret;
-    @track publicKey;
-    @track initError;
-    @track isLoading = false;
+     clientSecret;
+     publicKey;
+     initError;
+     isLoading = false;
     
-    @track stripe;
-    @track cardElement;
-    @track card;
-    @track cardErrors;
-    @track message;
-    @track showModal = false;
-    @track showLoader = false;
-    @track statusCode;
-    @track result;
+     stripe;
+     cardElement;
+     card;
+     cardErrors;
+     message;
+     showModal = false;
+     showLoader = false;
+     statusCode;
+     result;
     
     
     @wire(getStripePublicKey)
     wiredPublicKey({ data, error }) {
+        //try catch
         if (data) {
             this.publicKey = data;
             this.tryInitStripe();
@@ -42,6 +43,7 @@ export default class StripeCardPayment extends LightningElement {
         amount: '$amount'
     })
     wiredCreatePaymentIntent({ data, error }) {
+        //try catch
         if (data) {
             this.clientSecret = data;
             this.tryInitStripe();
@@ -74,6 +76,8 @@ export default class StripeCardPayment extends LightningElement {
             
             this.stripe = window.Stripe(this.publicKey);
             this.cardElement = cardElement;
+
+            //variable color css
             
             const style = {
                 base: {

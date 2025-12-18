@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : REEJ_AJ
  * @group             : 
- * @last modified on  : 10-12-2025
+ * @last modified on  : 11-12-2025
  * @last modified by  : REEJ_AJ
 **/
 public with sharing class GenericStripeController {
@@ -19,6 +19,7 @@ public with sharing class GenericStripeController {
     @AuraEnabled(cacheable=true)
     public static String createPaymentIntent(Decimal amount) {
         if (amount == null || amount <= 0) {
+            //En anglais + externaliser
             throw new AuraHandledException('Le montant doit être strictement positif.');
         }
 

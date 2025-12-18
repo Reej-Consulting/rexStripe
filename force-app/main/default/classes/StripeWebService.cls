@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : REEJ_AJ
  * @group             : 
- * @last modified on  : 10-12-2025
+ * @last modified on  : 11-12-2025
  * @last modified by  : REEJ_AJ
 **/
 public with sharing class StripeWebService {
@@ -21,11 +21,6 @@ public with sharing class StripeWebService {
     ) {
         // Récupère apiKey + baseUrl 
         Map<String, String> keys = StripeConfigService.getStripeKeys();
-
-        if (keys == null || String.isBlank(keys.get('apiKey')) || String.isBlank(keys.get('baseUrl'))) {
-            System.debug('⚠️ Aucune config Stripe trouvée.');
-            return null;
-        }
 
         String endpoint = keys.get('baseUrl') + path;
 
